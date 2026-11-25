@@ -54,6 +54,13 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-soft: var(--success-soft);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --shadow-card: var(--shadow-card);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
@@ -73,23 +80,32 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.75rem;
+  --background: oklch(0.984 0.003 247.858);
+  --foreground: oklch(0.208 0.042 265.755);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.208 0.042 265.755);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
+  --popover-foreground: oklch(0.208 0.042 265.755);
   --primary: oklch(0.208 0.042 265.755);
   --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
+  --secondary: oklch(0.955 0.01 250);
   --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
+  --muted: oklch(0.955 0.01 250);
+  --muted-foreground: oklch(0.52 0.04 257);
+  --accent: oklch(0.77 0.165 70);
   --accent-foreground: oklch(0.208 0.042 265.755);
+  --success: oklch(0.696 0.149 162.5);
+  --success-foreground: oklch(1 0 0);
+  --success-soft: oklch(0.95 0.05 165);
+  --accent-soft: oklch(0.96 0.06 85);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.92 0.013 255.5);
+  --input: oklch(0.92 0.013 255.5);
+  --ring: oklch(0.696 0.149 162.5);
+  --gradient-hero: linear-gradient(135deg, oklch(0.208 0.042 265.755), oklch(0.28 0.06 250));
+  --shadow-card: 0 1px 2px oklch(0.2 0.04 265 / 6%), 0 8px 24px -12px oklch(0.2 0.04 265 / 18%);
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
@@ -154,3 +170,6 @@
     color: var(--color-foreground);
   }
 }
+
+@utility bg-hero { background-image: var(--gradient-hero); }
+@utility shadow-card { box-shadow: var(--shadow-card); }

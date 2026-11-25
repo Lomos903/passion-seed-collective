@@ -1,23 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SkillBridgeApp } from "@/components/skillbridge/SkillBridgeApp";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "SkillBridge — Closing the Local Experience Gap" },
+      { name: "description", content: "Blind, skills-first matching and paid micro-fellowships that give refugee talent in Kenya a Verified Local Reference." },
+      { property: "og:title", content: "SkillBridge — Closing the Local Experience Gap" },
+      { property: "og:description", content: "Blind talent discovery, micro-fellowships and verified local references for refugee professionals." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: SkillBridgeApp,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
